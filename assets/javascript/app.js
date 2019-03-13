@@ -21,7 +21,8 @@ $("#dog-button").on("click", function (event) {
         };
     });
 });
-function displayDog() {
+$("button").on("click", function(event){
+    event.preventDefault();
 
     $.ajax({
         url: "https://api.thedogapi.com/v1/images/search?api_key=724f63ac-650f-4b09-a78e-1c906fd4ca35&limit=10",
@@ -29,8 +30,6 @@ function displayDog() {
         }).then(function(response) {
         console.log(response);
         });
-    $("button").on("click", function(event){
-    event.preventDefault();
     }
 
 function displayBreed() {
