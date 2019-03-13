@@ -1,0 +1,44 @@
+.grid-container {
+    display: grid;
+    grid-template-areas:
+'header header header header header header'
+'menu main main main article article'
+'footer footer footer footer footer footer';
+   grid-gap: 10px;
+   border: solid 2px yellow;
+   margin-top: 20px;
+}
+
+.header {
+   grid-area: header;
+   border: dotted 2px blue;
+   margin-right: 10px;
+   margin-left: 10px;
+   text-align: center;
+}
+
+.section {
+   grid-area: main;
+   border: dotted 2px red;
+}
+
+.footer {
+   grid-area: footer;
+   border: dotted 2px green;
+   margin-right: 10px;
+   margin-left: 10px;
+   text-align: center;
+}
+
+.menu {
+   border: dotted 2px purple;
+   margin-left: 10px;
+   text-align: center;
+}
+
+.article {
+   grid-area: article;
+   border: dotted 2px pink;
+   margin-right: 10px;
+   text-align: center;
+}

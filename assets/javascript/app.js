@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function displayDog() {
 
     $.ajax({
@@ -24,3 +25,12 @@ function clearInfo() {
     $("").attr("src", "");
     $("").remove()
 }
+=======
+// petfinder notes:
+// https://api.petfinder.com/pet.find?key=129bc9340b07c13a3cae63a8fd9f07e6&format=json&animal=dog&location=44236
+$("button").on("click", function(event){
+    event.preventDefault();
+    // clear input cells
+    var queryURL
+})
+>>>>>>> d43e88be8dc8fd4083e654fe0b53bd482e09b5e8
