@@ -1,5 +1,3 @@
-
-
 $("#dog-button").on("click", function (event) {
     event.preventDefault();
     // code clear input cells
@@ -23,7 +21,6 @@ $("#dog-button").on("click", function (event) {
         };
     });
 });
-
 function displayDog() {
 
     $.ajax({
@@ -50,4 +47,3 @@ function clearInfo() {
     $("").attr("src", "");
     $("").remove()
 }
-
