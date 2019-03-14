@@ -38,7 +38,7 @@ $("#dog-button").on("click", function (event) {
             var dogButton = $("<button>");
             dogButton.text("Learn more");
             dogDiv.append(dogButton);
-            $(".dogs").append(dogDiv);
+            $(".vertical-menu").append(dogDiv);
         };
     });
 });
