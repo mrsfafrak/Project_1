@@ -12,17 +12,27 @@ $("#dog-button").on("click", function (event) {
         var results = response.petfinder.pets.pet;
         for (var i = 0; i < results.length; i++) {
             var dogDiv = $("<div>");
-            dogDiv.attr("class","dog-card");
+            dogDiv.attr("class", "dog-card card");
             var dogImage = $("<img>");
             dogImage.attr("src", results[i].media.photos.photo[1].$t)
+            dogImage.attr("class", "card-img-top");
             var name = $("<p>").text(results[i].name.$t);
+            name.attr("class", "card-title");
             dogDiv.append(dogImage);
             dogDiv.append(name);
             // console.log(results[i].name.$t);
             // console.log(results[i].media.photos.photo[1].$t);
-            for (var j = 0; j < results[i].breeds.breed.length; j++) {
-                // console.log(results[i].breeds.breed[1].$t);
-                var breed = $("<p>").text(results[i].breeds.breed[j].$t);
+            if (results[i].breeds.breed.length > 0) {
+                for (var j = 0; j < results[i].breeds.breed.length; j++) {
+                    // console.log(results[i].breeds.breed[1].$t);
+                    var breed = $("<p>").text(results[i].breeds.breed[j].$t);
+                    breed.attr("class", "card-text");
+                    dogDiv.append(breed);
+                }
+            }
+            else {
+                var breed = $("<p>").text(results[i].breeds.breed.$t);
+                breed.attr("class", "card-text");
                 dogDiv.append(breed);
             }
             var dogButton = $("<button>");
@@ -33,26 +43,27 @@ $("#dog-button").on("click", function (event) {
     });
 });
 
-$("button").on("click", function(event){
+
+$("button").on("click", function (event) {
     event.preventDefault();
 
     $.ajax({
         url: "https://api.thedogapi.com/v1/images/search?api_key=724f63ac-650f-4b09-a78e-1c906fd4ca35&limit=10",
         method: "GET"
-        }).then(function(response) {
+    }).then(function (response) {
         console.log(response);
-        });
-    }
+    });
+})
 
 function displayBreed() {
 
     $.ajax({
         url: "https://api.thedogapi.com/v1/breeds/2?api_key=724f63ac-650f-4b09-a78e-1c906fd4ca35&limit=10",
         method: "GET"
-        }).then(function(response) {
+    }).then(function (response) {
         console.log(response);
-        });
-    }
+    });
+}
 
 function clearInfo() {
     $("").attr("src", "");

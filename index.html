@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <title>Dog Finder Project 1</title>
@@ -11,46 +12,133 @@
     <!-- custom CSS sheet -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
+
 <body>
     <div class="grid-container">
-        <div class="header">
-            <h1>project 1</h1>
-            <h2>information about the dog app</h2>
+        <div class="grid-container1">
+            <div class="grid-item0">TITLE OF PAGE</div>
         </div>
-        <div class="menu">
-            <form>
-                Zip code:<br>
-                <input type="text" name="zipcode" placeholder="XXXXX">
-                <br><br>
-                <button type="submit" id="dog-button" value="Submit"> Submit </button>
-            </form>
-        </div>
-        <div class="section">
-            <div class="image container dogs">
+        <!-- Grid holding form for search -->
+        <div class="grid-container2">
+            <div class="search field">
+                <form>
+                    <div class="row">
+                        <!-- Actual search form -->
+                        <label for="zipcode">Enter Zip Code:</label>
+                        <input type="text" id="zipcode" placeholder="ZIP Code">
+                    </div>
+                    <pre>--OR--                                     <button id="dog-button">Give me some doggies</button></pre>
+                    <div class="row">
+                        <label for="city/state">Enter City, State:</label>
+                        <input type="text" id="city/state" placeholder="City or State">
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="footer">
-            <h3>footer</h3>
+        <!-- Title section for dog choices DIV -->
+        <div class="grid-container3">
+            <div class="grid-item4">Let's take a look at these canines ...</div>
         </div>
-        <div class="article">
-            <p>Description of breed</p>
+        <!-- Grid holding cards for dog choices -->
+        <div class="grid-container4">
+            <div class="grid-item5">
+                <div class="row ">
+                    <div class="vertical-menu">
+                        <!-- <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <p><img src="" alt="">Dog Name</p>
+                                <h3>Breed</h3>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Selected dog breed information -->
+            <div class="grid-container5">
+                <div class="grid-itema">
+                    <div class="cardChosen">
+                        <img src="" alt="selected dog">
+                        <div class="container">
+                            <p>Dog/breed name</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-itemb">b</div>
+            </div>
+            <!-- Footer -->
+            <div class="grid-container6">
+                <div class="grid-item10">Tori, Frank, Crystal, & Gabby</div>
+            </div>
         </div>
-    </div>
-    
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- bootstrap js links -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <!-- Moment.js Reference -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <!-- link to external js file -->
-    <script src="./assets/javascript/app.js"></script>
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- bootstrap js links -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <!-- Firebase Reference -->
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <!-- Moment.js Reference -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <!-- link to external js file -->
+        <script src="./assets/javascript/app.js"></script>
 </body>
+
 </html>
