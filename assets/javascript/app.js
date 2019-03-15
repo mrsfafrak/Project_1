@@ -9,7 +9,7 @@ $("#dog-button").on("click", function (event) {
         dataType: 'jsonp',
         method: "GET"
     }).then(function (response) {
-        console.log(response);
+        // console.log(response);
         var results = response.petfinder.pets.pet;
         for (var i = 0; i < results.length; i++) {
             var dogDiv = $("<div>");
@@ -21,29 +21,29 @@ $("#dog-button").on("click", function (event) {
             name.attr("class", "card-title");
             dogDiv.append(dogImage);
             dogDiv.append(name);
-        var breedArr=[];
+
             if (results[i].breeds.breed.length > 0) {
                 for (var j = 0; j < results[i].breeds.breed.length; j++) {
                     var breed = $("<p>").text(results[i].breeds.breed[j].$t);
                     breed.attr("class", "card-text");
                     dogDiv.append(breed);
-                    breedArr.push(results[i].breeds.breed[j].$t);
-                    console.log("breed array:"+breedArr);
-
+                    var dogButton = $("<button>");
+                    dogButton.attr("class", "breed-button");
+                    dogButton.attr("id", results[i].breeds.breed[j].$t);
+                    dogButton.text("Learn more");
+                    dogDiv.append(dogButton);
                 }
             }
             else {
                 var breed = $("<p>").text(results[i].breeds.breed.$t);
                 breed.attr("class", "card-text");
                 dogDiv.append(breed);
+                var dogButton = $("<button>");
+                dogButton.attr("class", "breed-button");
+                dogButton.attr("id", results[i].breeds.breed.$t);
+                dogButton.text("Learn more");
+                dogDiv.append(dogButton);
             }
-            var dogButton = $("<button>");
-            dogButton.attr("class", "breed-button");
-            // $(this).data({breed: breedArr});
-
-            // dogButton.attr("class",breedArr[0]);
-            dogButton.text("Learn more");
-            dogDiv.append(dogButton);
 
             $(".vertical-menu1").append(dogDiv);
         };
@@ -52,12 +52,10 @@ $("#dog-button").on("click", function (event) {
 
 $(document).on("click", ".breed-button", function (event) {
     event.preventDefault();
-// console.log($(this).parent());
-    // var breed = $(this).val();
-    // console.log(breed);
-
-    // var queryURL = "https://api.thedogapi.com/v1/breeds/search?x-api-key=724f63ac-650f-4b09-a78e-1c906fd4ca35&q="+breed;
-    var queryURL = "https://api.thedogapi.com/v1/breeds/search?x-api-key=724f63ac-650f-4b09-a78e-1c906fd4ca35&q=terrier"
+    console.log($(this).attr("id"));
+    var breed = $(this).attr("id");
+    var queryURL = "https://api.thedogapi.com/v1/breeds/search?x-api-key=724f63ac-650f-4b09-a78e-1c906fd4ca35&q=" + breed;
+    // var queryURL = "https://api.thedogapi.com/v1/breeds/search?x-api-key=724f63ac-650f-4b09-a78e-1c906fd4ca35&q=terrier"
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -78,7 +76,7 @@ $(document).on("click", ".breed-button", function (event) {
             height.attr("class", "card-text");
             dogCont.append(height);
 
-            var lifespan = $("<p>").text("life span: " + response[i].life_span + " years");
+            var lifespan = $("<p>").text("life span: " + response[i].life_span);
             lifespan.attr("class", "card-text");
             dogCont.append(lifespan);
 
