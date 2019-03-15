@@ -18,54 +18,61 @@ $("#dog-button").on("click", function (event) {
         dataType: 'jsonp',
         method: "GET"
     }).then(function (response) {
-        var results = response.petfinder.pets.pet;
-        // loop through array of adoptable dogs
-        for (var i = 0; i < results.length; i++) {
-            // create new dog card/div
-            var dogDiv = $("<div>");
-            dogDiv.attr("class", "dog-card card");
-            // if no image exists on petfinder
-            if (jQuery.isEmptyObject(results[i].media)) {
-                var dogImage = $("<img>");
-                dogImage.attr("alt", "Sorry, no images available; however, we are sure this doggie is probably cute")
-                dogImage.attr("class", "card-img-top");
-                dogDiv.append(dogImage);
-            } else {
-                // if image exists, add first image associated with dog to card
-                var dogImage = $("<img>");
-                dogImage.attr("src", results[i].media.photos.photo[1].$t)
-                dogImage.attr("class", "card-img-top");
-                dogDiv.append(dogImage);
-            };
-            // add name of dog to card
-            var name = $("<p>").text(results[i].name.$t);
-            name.attr("class", "card-title");
-            dogDiv.append(name);
-            // add breed(s) to card with this if/else statement
-            if (results[i].breeds.breed.length > 0) {
-                for (var j = 0; j < results[i].breeds.breed.length; j++) {
-                    var breed = $("<p>").text(results[i].breeds.breed[j].$t);
+        // if no dog come back on search
+        if (typeof response.petfinder.pets == "undefined") {
+            var noDogMessage = $("<p>").text("No doggies available for that entry.");
+            $(".vertical-menu1").append(noDogMessage);
+        } else {
+            // if dogs are available for adoption
+            var results = response.petfinder.pets.pet;
+            // loop through array of adoptable dogs
+            for (var i = 0; i < results.length; i++) {
+                // create new dog card/div
+                var dogDiv = $("<div>");
+                dogDiv.attr("class", "dog-card card");
+                // if no image exists on petfinder
+                if (jQuery.isEmptyObject(results[i].media)) {
+                    var dogImage = $("<img>");
+                    dogImage.attr("alt", "Sorry, no images available; however, we are sure this doggie is probably cute")
+                    dogImage.attr("class", "card-img-top");
+                    dogDiv.append(dogImage);
+                } else {
+                    // if image exists, add first image associated with dog to card
+                    var dogImage = $("<img>");
+                    dogImage.attr("src", results[i].media.photos.photo[1].$t)
+                    dogImage.attr("class", "card-img-top");
+                    dogDiv.append(dogImage);
+                };
+                // add name of dog to card
+                var name = $("<p>").text(results[i].name.$t);
+                name.attr("class", "card-title");
+                dogDiv.append(name);
+                // add breed(s) to card with this if/else statement
+                if (results[i].breeds.breed.length > 0) {
+                    for (var j = 0; j < results[i].breeds.breed.length; j++) {
+                        var breed = $("<p>").text(results[i].breeds.breed[j].$t);
+                        breed.attr("class", "card-text");
+                        dogDiv.append(breed);
+                        var dogButton = $("<button>");
+                        dogButton.attr("class", "breed-button");
+                        dogButton.attr("id", results[i].breeds.breed[j].$t);
+                        dogButton.text("Learn more");
+                        dogDiv.append(dogButton);
+                    }
+                }
+                else {
+                    var breed = $("<p>").text(results[i].breeds.breed.$t);
                     breed.attr("class", "card-text");
                     dogDiv.append(breed);
                     var dogButton = $("<button>");
                     dogButton.attr("class", "breed-button");
-                    dogButton.attr("id", results[i].breeds.breed[j].$t);
+                    dogButton.attr("id", results[i].breeds.breed.$t);
                     dogButton.text("Learn more");
                     dogDiv.append(dogButton);
                 }
-            }
-            else {
-                var breed = $("<p>").text(results[i].breeds.breed.$t);
-                breed.attr("class", "card-text");
-                dogDiv.append(breed);
-                var dogButton = $("<button>");
-                dogButton.attr("class", "breed-button");
-                dogButton.attr("id", results[i].breeds.breed.$t);
-                dogButton.text("Learn more");
-                dogDiv.append(dogButton);
-            }
-            // append completed dog card to page
-            $(".vertical-menu1").append(dogDiv);
+                // append completed dog card to page
+                $(".vertical-menu1").append(dogDiv);
+            };
         };
     });
 });
