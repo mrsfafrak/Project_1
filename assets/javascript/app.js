@@ -1,15 +1,15 @@
 $("#dog-button").on("click", function (event) {
     event.preventDefault();
-    // code clear input cell
+    $(".vertical-menu1").empty();
     var zipcode = $("#zipcode").val().trim();
+    $("#zipcode").val("");
     var queryURL = "https://api.petfinder.com/pet.find?key=129bc9340b07c13a3cae63a8fd9f07e6&format=json&animal=dog&location=" + zipcode;
-    // var queryURL = "https://api.petfinder.com/pet.find?key=129bc9340b07c13a3cae63a8fd9f07e6&format=json&animal=dog&count=3&location=44236";
+    
     $.ajax({
         url: queryURL,
         dataType: 'jsonp',
         method: "GET"
     }).then(function (response) {
-        // console.log(response);
         var results = response.petfinder.pets.pet;
         for (var i = 0; i < results.length; i++) {
             var dogDiv = $("<div>");
@@ -52,6 +52,7 @@ $("#dog-button").on("click", function (event) {
 
 $(document).on("click", ".breed-button", function (event) {
     event.preventDefault();
+    $(".vertical-menu2").empty();
     console.log($(this).attr("id"));
     var breed = $(this).attr("id");
     var queryURL = "https://api.thedogapi.com/v1/breeds/search?x-api-key=724f63ac-650f-4b09-a78e-1c906fd4ca35&q=" + breed;
