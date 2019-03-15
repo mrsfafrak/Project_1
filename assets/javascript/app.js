@@ -24,14 +24,14 @@ $("#dog-button").on("click", function (event) {
             // create new dog card/div
             var dogDiv = $("<div>");
             dogDiv.attr("class", "dog-card card");
-            // add first image associated with dog to card
-            // console.log(results[i].media);
-            if (results[i].media == "") {
+            // if no image exists on petfinder
+            if (jQuery.isEmptyObject(results[i].media)) {
                 var dogImage = $("<img>");
                 dogImage.attr("alt", "Sorry, no images available; however, we are sure this doggie is probably cute")
                 dogImage.attr("class", "card-img-top");
                 dogDiv.append(dogImage);
             } else {
+                // if image exists, add first image associated with dog to card
                 var dogImage = $("<img>");
                 dogImage.attr("src", results[i].media.photos.photo[1].$t)
                 dogImage.attr("class", "card-img-top");
@@ -88,36 +88,36 @@ $(document).on("click", ".breed-button", function (event) {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
+            // if no breed info exists or in unsearchable format
             if (response == "") {
                 var noInfoMessage = $("<p>").text("No info available for this breed search. Try another breed from a dog above.");
                 $(".vertical-menu2").append(noInfoMessage);
             }
-            else{
-            // loop through array of associated breed results
-            for (var i = 0; i < response.length; i++) {
-                var dogCont = $("<div>");
-                dogCont.attr("class", "card");
-                // adds breed name to card
-                var name = $("<p>").text("Breed: " + response[i].name);
-                name.attr("class", "card-title");
-                dogCont.append(name);
-                // adds weight to card
-                var weight = $("<p>").text("weight: " + response[i].weight.imperial + " lbs");
-                weight.attr("class", "card-text");
-                dogCont.append(weight);
-                // adds height to card
-                var height = $("<p>").text("height: " + response[i].height.imperial + " inches");
-                height.attr("class", "card-text");
-                dogCont.append(height);
-                // adds lifespan to card
-                var lifespan = $("<p>").text("life span: " + response[i].life_span);
-                lifespan.attr("class", "card-text");
-                dogCont.append(lifespan);
-                // append breed card to page
-                $(".vertical-menu2").append(dogCont);
-            };
-        }
+            else {
+                // loop through array of associated breed results
+                for (var i = 0; i < response.length; i++) {
+                    var dogCont = $("<div>");
+                    dogCont.attr("class", "card");
+                    // adds breed name to card
+                    var name = $("<p>").text("Breed: " + response[i].name);
+                    name.attr("class", "card-title");
+                    dogCont.append(name);
+                    // adds weight to card
+                    var weight = $("<p>").text("weight: " + response[i].weight.imperial + " lbs");
+                    weight.attr("class", "card-text");
+                    dogCont.append(weight);
+                    // adds height to card
+                    var height = $("<p>").text("height: " + response[i].height.imperial + " inches");
+                    height.attr("class", "card-text");
+                    dogCont.append(height);
+                    // adds lifespan to card
+                    var lifespan = $("<p>").text("life span: " + response[i].life_span);
+                    lifespan.attr("class", "card-text");
+                    dogCont.append(lifespan);
+                    // append breed card to page
+                    $(".vertical-menu2").append(dogCont);
+                };
+            }
         });
     };
 });
