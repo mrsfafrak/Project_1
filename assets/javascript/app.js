@@ -25,10 +25,18 @@ $("#dog-button").on("click", function (event) {
             var dogDiv = $("<div>");
             dogDiv.attr("class", "dog-card card");
             // add first image associated with dog to card
-            var dogImage = $("<img>");
-            dogImage.attr("src", results[i].media.photos.photo[1].$t)
-            dogImage.attr("class", "card-img-top");
-            dogDiv.append(dogImage);
+            // console.log(results[i].media);
+            if (results[i].media == "") {
+                var dogImage = $("<img>");
+                dogImage.attr("alt", "Sorry, no images available; however, we are sure this doggie is probably cute")
+                dogImage.attr("class", "card-img-top");
+                dogDiv.append(dogImage);
+            } else {
+                var dogImage = $("<img>");
+                dogImage.attr("src", results[i].media.photos.photo[1].$t)
+                dogImage.attr("class", "card-img-top");
+                dogDiv.append(dogImage);
+            };
             // add name of dog to card
             var name = $("<p>").text(results[i].name.$t);
             name.attr("class", "card-title");
@@ -80,6 +88,12 @@ $(document).on("click", ".breed-button", function (event) {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
+            if (response == "") {
+                var noInfoMessage = $("<p>").text("No info available for this breed search. Try another breed from a dog above.");
+                $(".vertical-menu2").append(noInfoMessage);
+            }
+            else{
             // loop through array of associated breed results
             for (var i = 0; i < response.length; i++) {
                 var dogCont = $("<div>");
@@ -103,9 +117,10 @@ $(document).on("click", ".breed-button", function (event) {
                 // append breed card to page
                 $(".vertical-menu2").append(dogCont);
             };
+        }
         });
-    }
-})
+    };
+});
 
 
 
