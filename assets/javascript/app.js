@@ -4,7 +4,6 @@ $("#dog-button").on("click", function (event) {
     var zipcode = $("#zipcode").val().trim();
     $("#zipcode").val("");
     var queryURL = "https://api.petfinder.com/pet.find?key=129bc9340b07c13a3cae63a8fd9f07e6&format=json&animal=dog&location=" + zipcode;
-    
     $.ajax({
         url: queryURL,
         dataType: 'jsonp',
@@ -21,7 +20,6 @@ $("#dog-button").on("click", function (event) {
             name.attr("class", "card-title");
             dogDiv.append(dogImage);
             dogDiv.append(name);
-
             if (results[i].breeds.breed.length > 0) {
                 for (var j = 0; j < results[i].breeds.breed.length; j++) {
                     var breed = $("<p>").text(results[i].breeds.breed[j].$t);
@@ -55,8 +53,11 @@ $(document).on("click", ".breed-button", function (event) {
     $(".vertical-menu2").empty();
     console.log($(this).attr("id"));
     var breed = $(this).attr("id");
+    if (breed === "Mixed Breed"){
+        var mixedMessage = $("<p>").text("This adorable furry friend doesn't have specific info as they are described as being a mixed breed. Doesn't matter though because they'll love you unconditionally!")
+        $(".vertical-menu2").append(mixedMessage);
+    }else{
     var queryURL = "https://api.thedogapi.com/v1/breeds/search?x-api-key=724f63ac-650f-4b09-a78e-1c906fd4ca35&q=" + breed;
-    // var queryURL = "https://api.thedogapi.com/v1/breeds/search?x-api-key=724f63ac-650f-4b09-a78e-1c906fd4ca35&q=terrier"
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -64,19 +65,19 @@ $(document).on("click", ".breed-button", function (event) {
         for (var i = 0; i < response.length; i++) {
             var dogCont = $("<div>");
             dogCont.attr("class", "card");
-
+            // adds breed name to card
             var name = $("<p>").text("Breed: " + response[i].name);
             name.attr("class", "card-title");
             dogCont.append(name);
-
+            // adds weight to card
             var weight = $("<p>").text("weight: " + response[i].weight.imperial + " lbs");
             weight.attr("class", "card-text");
             dogCont.append(weight);
-
+            // adds height to card
             var height = $("<p>").text("height: " + response[i].height.imperial + " inches");
             height.attr("class", "card-text");
             dogCont.append(height);
-
+            // adds lifespan to card
             var lifespan = $("<p>").text("life span: " + response[i].life_span);
             lifespan.attr("class", "card-text");
             dogCont.append(lifespan);
@@ -84,6 +85,7 @@ $(document).on("click", ".breed-button", function (event) {
             $(".vertical-menu2").append(dogCont);
         };
     });
+    }
 })
 
 
