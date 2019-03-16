@@ -1,17 +1,16 @@
+var noDogZip = $("<p>").text("No zipcode entered yet. That's okay, just plug in your zipcode above!");
+$(".vertical-menu1").append(noDogZip);
 // on click event for get doggies button
 $("#dog-button").on("click", function (event) {
+    $(".zipcode").empty();
     // prevent page from reloading
     event.preventDefault();
     // clear anything in div 
     $(".vertical-menu1").empty();
     // get zip code
     var zipcode = $("#zipcode").val().trim();
-    // ADD IN ZIPCODE VALIDATION HERE
-    var regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
-    var zipIsValid = false
-    if (regexp.test(zipcode)) {
-        zipIsValid = true;
-    }
+    // ZIPCODE VALIDATION 
+   
     // clear zip code field
     $("#zipcode").val("");
     // ajax call to petfinder api
@@ -78,6 +77,7 @@ $("#dog-button").on("click", function (event) {
             };
         };
     });
+};
 });
 // on click event for dynamically created breed buttons
 $(document).on("click", ".breed-button", function (event) {
