@@ -64,6 +64,11 @@ $("#dog-button").on("click", function (event) {
                 var name = $("<p>").text(results[i].name.$t);
                 name.attr("class", "card-title");
                 dogDiv.append(name);
+
+                var age = $("<p>").text(results[i].age.$t);
+                age.attr("class", "card-text");
+                dogDiv.append(age);
+                
                 // add breed(s) to card with this if/else statement
                 if (results[i].breeds.breed.length > 0) {
                     for (var j = 0; j < results[i].breeds.breed.length; j++) {
