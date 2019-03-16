@@ -77,7 +77,6 @@ $("#dog-button").on("click", function (event) {
             };
         };
     });
-};
 });
 // on click event for dynamically created breed buttons
 $(document).on("click", ".breed-button", function (event) {
