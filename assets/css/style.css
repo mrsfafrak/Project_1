@@ -9,7 +9,6 @@
   height: 200%;
   z-index: -1;
 }
-
 /* Footer-background*/
 #footer-bg {
   width:50%;
@@ -17,7 +16,6 @@
   margin-bottom: 5px;
   margin-top: 5px;
 }
-
 #footer-bg img {
   position:absolute;  
   width: 100px;
@@ -25,7 +23,6 @@
   z-index: -3;
   opacity: 1.0;
 }
-
 /* Main container holding webpage information*/
 .grid-container {
     grid-template-columns: auto;
@@ -35,7 +32,6 @@
     margin-right: 50px;
     margin-left: 50px;
   }
-
   /*container 1*/
  .grid-container1 {
   display: grid;
@@ -44,7 +40,6 @@
   padding: 10px;
   border-radius: 25px;
  }
- 
  .grid-item0 {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
@@ -53,7 +48,6 @@
   font-family: 'Dancing Script', cursive;
   border-radius: 25px;
  }
-
  /*container 2*/
  .grid-container2 {
   display: grid;
@@ -69,7 +63,6 @@
   width: 500px;
   font-family: 'Give You Glory', cursive;
  }
-
  .grid-item4 {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
@@ -79,7 +72,6 @@
   margin-right: 125px;
   border-radius: 25px;
  }
- 
  /*container 3*/
  .grid-container3 {
   display: grid;
@@ -93,7 +85,6 @@
   font-family: 'Give You Glory', cursive;
   margin-top: 5px;
  }
-
  .grid-item5 {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
@@ -104,7 +95,6 @@
   border-radius: 25px;
   font-family: 'Give You Glory', cursive;
  }
-
  .grid-item7 {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
@@ -115,7 +105,6 @@
   border-radius: 25px;
   font-family: 'Give You Glory', cursive;
  }
-
  /*container 4*/
  .grid-container4 {
   display: grid;
@@ -125,7 +114,6 @@
   margin-top: 20px;
   border-radius: 25px;
  }
-
  .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
@@ -133,7 +121,6 @@
   text-align: center;
   border-radius: 25px;
  }
-
  /*container 6*/
  .grid-container6 { 
   display: grid;
@@ -144,7 +131,6 @@
   margin-left: 25px;
   margin-right: 25px;
  }
-
  .grid-item10 {
   font-size: 30px;
   text-align: center;
@@ -153,40 +139,27 @@
   margin-top:10px;
   border-radius: 25px;
  }
-
-
- 
  /*Vertical menu for dog selections*/
  .vertical-menu1 {
   width: 1000px;
   height:400px;
   overflow-y: auto;
  }
- 
  img {
   border-radius: 5px 5px 0 0;
   height: 10em;
   width: 10em;
  }
- 
- .card{
-    width: 11em;
-    float: left;
-    margin: 1em;
- }
-
  .vertical-menu2 {
   width: 1000px;
   height:200px;
   overflow-y: auto;
  }
- 
  img {
   border-radius: 5px 5px 0 0;
   height: 10em;
   width: 10em;
  }
- 
  .card{
     width: 11em;
     float: left;
@@ -204,22 +177,17 @@
  [class*="col-"] {
    width: 100%;
   }
-  
   .row {
     width: 1000px;
     margin-left:150px;
-    font-family: 'Give You Glory', cursive;
-     
+    font-family: 'Give You Glory', cursive; 
   }
-
   /*CSS for dog button*/
   .dogButton {
     font-family: 'Give You Glory', cursive;
       margin-left:295px;
   }
-
   /*Modal Styling*/
-
   /* The Modal (background) */
 .modal {
   display: none; 
@@ -234,7 +202,6 @@
   background-color: rgb(0,0,0); 
   background-color: rgba(0,0,0,0.4); 
 }
-
 /* Modal Content */
 .modal-content {
   position: relative;
@@ -249,18 +216,15 @@
   animation-name: animatetop;
   animation-duration: 0.6s
 }
-
 /* Add Animation */
 @-webkit-keyframes animatetop {
   from {top:-300px; opacity:0} 
   to {top:0; opacity:1}
 }
-
 @keyframes animatetop {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
-
 /* The Close Button */
 .close {
   color: white;
@@ -268,28 +232,23 @@
   font-size: 28px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
-
 .modal-header {
   padding: 2px 16px;
   background-color: #FFE6A7;
   color: white;
 }
-
 .modal-body {padding: 2px 16px;}
-
 .modal-footer {
   padding: 2px 16px;
   background-color: #FFE6A7;
   color: white;
 }
-
 .form {
   width: 500px;
   height: 35px;
