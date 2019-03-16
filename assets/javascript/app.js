@@ -1,5 +1,8 @@
+var noDogZip = $("<p>").text("No zipcode entered yet. That's okay, just plug in your zipcode above!");
+$(".vertical-menu1").append(noDogZip);
 // on click event for get doggies button
 $("#dog-button").on("click", function (event) {
+    $(".zipcode").empty();
     // prevent page from reloading
     event.preventDefault();
     // clear anything in div 
@@ -22,6 +25,7 @@ $("#dog-button").on("click", function (event) {
         $("#myModal").show();
         closeModal()
     }
+   
     // clear zip code field
     $("#zipcode").val("");
     // ajax call to petfinder api
@@ -46,7 +50,7 @@ $("#dog-button").on("click", function (event) {
                 // if no image exists on petfinder
                 if (jQuery.isEmptyObject(results[i].media)) {
                     var dogImage = $("<img>");
-                    dogImage.attr("alt", "Sorry, no images available; however, we are sure this doggie is probably cute")
+                    dogImage.attr("src", "https://dogbreedcartoon.com/wp-content/uploads/2016/11/Border-Collie-Brown-Edition.png")
                     dogImage.attr("class", "card-img-top");
                     dogDiv.append(dogImage);
                 } else {
@@ -117,7 +121,7 @@ $(document).on("click", ".breed-button", function (event) {
                 // loop through array of associated breed results
                 for (var i = 0; i < response.length; i++) {
                     var dogCont = $("<div>");
-                    dogCont.attr("class", "card");
+                    dogCont.attr("class", "breedcard");
                     // adds breed name to card
                     var name = $("<p>").text("Breed: " + response[i].name);
                     name.attr("class", "card-title");
