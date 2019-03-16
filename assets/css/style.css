@@ -164,7 +164,7 @@
     width: 11em;
     float: left;
     margin: 1em;
-    height: 320px;
+    height: 350px;
  }
  .breedcard{
   width: 11em;
@@ -179,7 +179,9 @@
   }
   .row {
     width: 1000px;
-    margin-left:150px;
+    /* margin-left:150px; */
+    margin-left: auto;
+    margin-right: auto;
     font-family: 'Give You Glory', cursive; 
   }
   /*CSS for dog button*/
