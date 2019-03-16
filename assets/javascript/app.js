@@ -7,8 +7,11 @@ $("#dog-button").on("click", function (event) {
     // get zip code
     var zipcode = $("#zipcode").val().trim();
     // ADD IN ZIPCODE VALIDATION HERE
-    // ==============================
-    // ==============================
+    var regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
+    var zipIsValid = false
+    if (regexp.test(zipcode)) {
+        zipIsValid = true;
+    }
     // clear zip code field
     $("#zipcode").val("");
     // ajax call to petfinder api
