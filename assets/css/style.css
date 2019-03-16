@@ -61,10 +61,11 @@
   background-color: #FFE6A7;
   padding: 10px; 
   border-radius: 25px;
-  margin-right: 225px;
-  margin-left: 225px;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin-right: 205px;
+  margin-left: 205px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  width: 500px;
  }
 
  .grid-item4 {
@@ -88,6 +89,7 @@
   border-radius: 25px;
   margin-bottom: 10px;
   font-family: 'Give You Glory', cursive;
+  margin-top: 5px;
  }
 
  .grid-item5 {
@@ -186,7 +188,7 @@
   /*CSS for dog button*/
   .dogButton {
     font-family: 'Give You Glory', cursive;
-      margin-left:250px;
+      margin-left:295px;
   }
 
   /*Modal Styling*/
@@ -259,4 +261,9 @@
   padding: 2px 16px;
   background-color: #2196F3;
   color: white;
+}
+
+.form {
+  width: 500px;
+  height: 35px;
 }
