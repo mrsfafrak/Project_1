@@ -227,27 +227,33 @@
 }
 /* The Close Button */
 .close {
-  color: white;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  display: block;
+  padding-right: 2cm;
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
 .modal-header {
   padding: 2px 16px;
   background-color: #FFE6A7;
-  color: white;
+  color: black;
+  display: inline-block;
 }
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 2px 16px;
+}
 .modal-footer {
   padding: 2px 16px;
   background-color: #FFE6A7;
-  color: white;
+  color: black;
+  height: 10px;
 }
 .form {
   width: 500px;
