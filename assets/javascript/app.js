@@ -35,7 +35,7 @@ $("#dog-button").on("click", function (event) {
                 // if no image exists on petfinder
                 if (jQuery.isEmptyObject(results[i].media)) {
                     var dogImage = $("<img>");
-                    dogImage.attr("alt", "Sorry, no images available; however, we are sure this doggie is probably cute")
+                    dogImage.attr("src", "https://dogbreedcartoon.com/wp-content/uploads/2016/11/Border-Collie-Brown-Edition.png")
                     dogImage.attr("class", "card-img-top");
                     dogDiv.append(dogImage);
                 } else {
@@ -106,7 +106,7 @@ $(document).on("click", ".breed-button", function (event) {
                 // loop through array of associated breed results
                 for (var i = 0; i < response.length; i++) {
                     var dogCont = $("<div>");
-                    dogCont.attr("class", "card");
+                    dogCont.attr("class", "breedcard");
                     // adds breed name to card
                     var name = $("<p>").text("Breed: " + response[i].name);
                     name.attr("class", "card-title");
