@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Finder Project 1</title>
+    <!-- css reset link -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- custom CSS sheet -->
+    <link rel="stylesheet" type="text/css" href="project#1\css\style.css">
+    <!-- animate reference -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!-- Favicon link -->
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.jpg"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Give+You+Glory" rel="stylesheet">
+</head>
+
+
+
+
+
+
+
+<body>
+    <div id="bg">
+        <img src="https://stat.ameba.jp/user_images/20170113/00/lyuta-kimono-japan/bf/55/j/o4608345613844210842.jpg?caw=800" id="bg" alt="sunset">
+    </div>
+    <div class="grid-container">
+        <div class="grid-container1">
+            <div class="grid-item0">TAIL-WAG COMPANION</div>
+        </div>
+        <!-- Grid holding form for search -->
+        <div class="grid-container2">
+            <form>
+                <div class="row">
+                    <!-- Actual search form -->
+                    <div>
+                        <p>No dogs yet...</p>
+                         <p>That's okay, just plug in your zipcode below to see adoptable dogs near you!</p>
+                    </div>
+                    <label for="zipcode">Enter Zip Code:</label>    
+                    <input type="text" id="zipcode" placeholder="ZIP Code">
+                </div>
+                <br>
+                <div class="dogButton">
+                <button id="dog-button">Give me some doggies</button>
+            </div>
+            </form>
+        </div>
+        <!-- Title section for dog choices DIV -->
+        <div class="grid-container3">
+            <div class="grid-item4">Here are some of the cute canines by your local area</div>
+        </div>
+        <!-- Grid holding cards for dog choices -->
+        <div class="grid-container4">
+            <div class="grid-item5">
+                <div>
+                    <p>When you come across a pup you may be interested in, don't hestitate to click on their image to learn a little bit more about that dog and their breed</p> 
+                </div>
+                <div class="row">
+                    <div class="vertical-menu1">
+                    </div>
+                </div>
+            </div>
+            <!-- Selected dog breed information -->
+            <div class="grid-item7">
+                <div>
+                    <p>If you feel like you've found a good fit, why not give the shelter a call?</p>
+                </div>
+                <div class="row">
+                    <div class="vertical-menu2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="grid-container6"> 
+            <div class="footer"> 
+            <div class="grid-item10">
+                <div id="-footer-bg">
+                    <img src="https://mutts.com/wp-content/themes/muttsstore/assets/images/HSUS-mobile.gif" id="footer-bg" alt="dog prints">
+                </div>      
+            </div>
+        </div>
+        </div>
+
+
+
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- bootstrap js links -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <!-- Firebase Reference -->
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <!-- Moment.js Reference -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <!-- link to external js file -->
+        <script src="app.js"></script>
+</body>
+
+</html>
