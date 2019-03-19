@@ -123,7 +123,7 @@ $(document).on("click", ".breed-button", function (event) {
                 $(".vertical-menu2").append(noInfoMessage);
             }
             else {
-                // loop through array of associated breed results
+                // loop through array of associated breed results            
                 for (var i = 0; i < response.length; i++) {
                     var dogCont = $("<div>");
                     dogCont.attr("class", "breedcard");
@@ -145,7 +145,7 @@ $(document).on("click", ".breed-button", function (event) {
                     dogCont.append(lifespan);
                     // append breed card to page
                     $(".vertical-menu2").append(dogCont);
-                };
+                }
             }
         });
     };
