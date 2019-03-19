@@ -1,6 +1,6 @@
 # Project_1
 
-![Tail-Wag Companion](/assets/images/Screen Shot 2019-03-19 at 6.50.34 PM.png)
+![Tail-Wag Companion](/assets/images/screenshot.png)
 	
 # Name: 
 Tail-Wag Companion
