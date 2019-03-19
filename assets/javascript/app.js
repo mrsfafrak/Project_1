@@ -25,7 +25,7 @@ $("#dog-button").on("click", function (event) {
         $("#myModal").show();
         closeModal()
     }
-   
+
     // clear zip code field
     $("#zipcode").val("");
     // ajax call to petfinder api
@@ -68,7 +68,7 @@ $("#dog-button").on("click", function (event) {
                 var age = $("<p>").text(results[i].age.$t);
                 age.attr("class", "card-text");
                 dogDiv.append(age);
-                
+
                 // add breed(s) to card with this if/else statement
                 if (results[i].breeds.breed.length > 0) {
                     for (var j = 0; j < results[i].breeds.breed.length; j++) {
@@ -92,6 +92,16 @@ $("#dog-button").on("click", function (event) {
                     dogButton.text("Learn more");
                     dogDiv.append(dogButton);
                 }
+                // add contact phone number
+                if (typeof results[i].contact.phone.$t == 'undefined') {
+                    var phone = $("<p>").text("Phone: no number provided");
+                    phone.attr("class", "card-text");
+                    dogDiv.append(phone);
+                } else {
+                    var phone = $("<p>").text("Phone: " + results[i].contact.phone.$t);
+                    phone.attr("class", "card-text");
+                    dogDiv.append(phone);
+                };
                 // append completed dog card to page
                 $(".vertical-menu1").append(dogDiv);
             };
