@@ -14,7 +14,6 @@ $("#dog-button").on("click", function (event) {
         $(".close").click(function () {
             $("#myModal").hide();
         });
-
     }
     var regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
     var zipIsValid = false
@@ -25,7 +24,6 @@ $("#dog-button").on("click", function (event) {
         $("#myModal").show();
         closeModal()
     }
-
     // clear zip code field
     $("#zipcode").val("");
     // ajax call to petfinder api
@@ -91,7 +89,7 @@ $("#dog-button").on("click", function (event) {
                     dogButton.attr("id", results[i].breeds.breed.$t);
                     dogButton.text("Learn more");
                     dogDiv.append(dogButton);
-                }
+                };
                 // add contact phone number
                 if (typeof results[i].contact.phone.$t == 'undefined') {
                     var phone = $("<p>").text("Phone: no number provided");
@@ -155,8 +153,8 @@ $(document).on("click", ".breed-button", function (event) {
                     dogCont.append(lifespan);
                     // append breed card to page
                     $(".vertical-menu2").append(dogCont);
-                }
-            }
+                };
+            };
         });
     };
 });
