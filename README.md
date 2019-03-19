@@ -1,5 +1,8 @@
 # Project_1
 
+![Tail-Wag Companion]()
+
+
 # Name: 
 Tail-Wag Companion
 
