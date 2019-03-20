@@ -1,4 +1,5 @@
 var noDogZip = $("<p>").text("No zipcode entered yet. That's okay, just plug in your zipcode above!");
+noDogZip.attr("class","animated infinite flash slower");
 $(".vertical-menu1").append(noDogZip);
 // on click event for get doggies button
 $("#dog-button").on("click", function (event) {
